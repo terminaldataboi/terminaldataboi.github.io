@@ -3,216 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terminal Data | Local Data Sovereignty & Archive Architecture</title>
-  <style>
-    :root {
-      --bg-canvas: #F4F5F7;
-      --ink-black: #121316;
-      --slate-dark: #2D3748;
-      --earth-brown: #C88A58;
-      --crimson: #C71D45;
-      --border-subtle: #D8DCE3;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--bg-canvas);
-      color: var(--ink-black);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      padding: 2rem 1.25rem;
-    }
-
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    header {
-      border-bottom: 2px solid var(--ink-black);
-      padding-bottom: 1.5rem;
-      margin-bottom: 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .brand {
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .brand span {
-      color: var(--crimson);
-    }
-
-    .location {
-      font-family: "SFMono-Regular", Consolas, monospace;
-      font-size: 0.85rem;
-      color: var(--slate-dark);
-    }
-
-    h1 {
-      font-size: 2.1rem;
-      line-height: 1.2;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.25rem;
-    }
-
-    .lead {
-      font-size: 1.15rem;
-      color: var(--slate-dark);
-      margin-bottom: 2.5rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 3rem;
-    }
-
-    .card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-subtle);
-      border-top: 3px solid var(--slate-dark);
-      padding: 1.25rem;
-    }
-
-    .card h2 {
-      font-family: "SFMono-Regular", Consolas, monospace;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.6rem;
-      color: var(--ink-black);
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: var(--slate-dark);
-    }
-
-    .cta-box {
-      background-color: var(--ink-black);
-      color: var(--bg-canvas);
-      padding: 2rem;
-      border-left: 4px solid var(--earth-brown);
-      margin-bottom: 3rem;
-    }
-
-    .cta-box h2 {
-      font-size: 1.35rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .cta-box p {
-      color: #CBD5E0;
-      margin-bottom: 1.5rem;
-      font-size: 0.98rem;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 1.25rem;
-      font-family: "SFMono-Regular", Consolas, monospace;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: opacity 0.15s ease;
-    }
-
-    .btn:hover {
-      opacity: 0.88;
-    }
-
-    .btn-primary {
-      background-color: var(--crimson);
-      color: #FFFFFF;
-    }
-
-    .btn-secondary {
-      background-color: transparent;
-      color: var(--bg-canvas);
-      border: 1px solid var(--earth-brown);
-    }
-
-    footer {
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 1.25rem;
-      font-family: "SFMono-Regular", Consolas, monospace;
-      font-size: 0.8rem;
-      color: var(--slate-dark);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-  </style>
+  <meta name="description" content="Terminal Data — Air-gapped local data sovereignty, drive consolidation, and archive architecture in Boise, Idaho." />
+  <title>Terminal Data | Local Data Sovereignty &amp; Archive Architecture</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">Terminal<span>_</span>Data</div>
-      <div class="location">BOISE, IDAHO // AIR-GAPPED SYSTEMS</div>
+  <div class="ambient-backdrop"></div>
+  <div id="scanline-overlay" class="scanline-overlay"></div>
+  <div id="toast" class="toast">Boot sequence initialized</div>
+
+  <div class="site-wrapper">
+    <!-- Top Telemetry Navigation Bar -->
+    <header class="top-bar">
+      <div class="brand-tag">
+        <span id="status-dot" class="status-dot"></span>
+        <span id="telemetry-text">SYS.BOOT // INITIALIZING...</span>
+      </div>
+      <div class="top-controls">
+        <button id="btn-replay" class="pill-btn" type="button" title="Replay CRT Boot">↻ Replay</button>
+        <button id="btn-theme" class="pill-btn" type="button">Dark CRT</button>
+        <button id="btn-scanlines" class="pill-btn" type="button">Scanlines: On</button>
+      </div>
     </header>
 
-    <main>
-      <h1>Your files, consolidated and under your control—without touching the cloud.</h1>
-      <p class="lead">
-        Terminal Data builds deterministic, local-first storage and archive systems for businesses, photographers, and families drowning in scattered drives and unindexed files.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h2>01 / Drive Consolidation</h2>
-          <p>Merge years of loose external drives, SD cards, and old machines into a single, deduplicated, human-readable directory structure.</p>
-        </div>
-        <div class="card">
-          <h2>02 / Media &amp; Doc Triage</h2>
-          <p>Automated EXIF chronological sorting for RAW/photo archives, paired with local OCR and extraction for legacy PDFs and records.</p>
-        </div>
-        <div class="card">
-          <h2>03 / Sovereign Backups</h2>
-          <p>On-premise, air-gapped backup architectures designed for multi-decade durability—no recurring cloud subscriptions or third-party exposure.</p>
+    <!-- Hero Section: Split CRT Animation + Value Proposition -->
+    <section class="hero">
+      <div class="hero-visual">
+        <div id="logo-card" class="logo-card" title="Click to pulse CRT // Double-click to reboot">
+          <canvas id="ambient-canvas"></canvas>
+          <svg id="terminal-svg" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TERMINAL Data Architecture Management Logo">
+            <defs>
+              <filter id="crt-glitch-filter" x="-10%" y="-10%" width="120%" height="120%">
+                <feOffset in="SourceGraphic" dx="0" dy="0" result="redShift" id="glitch-r" />
+                <feOffset in="SourceGraphic" dx="0" dy="0" result="blueShift" id="glitch-b" />
+                <feColorMatrix in="redShift" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.7 0" result="redOnly" />
+                <feColorMatrix in="blueShift" type="matrix" values="0 0 0 0 0  0 0.6 0 0 0  0 0 1 0 0  0 0 0 0.7 0" result="cyanOnly" />
+                <feBlend mode="screen" in="redOnly" in2="cyanOnly" result="aberration" />
+                <feBlend mode="normal" in="SourceGraphic" in2="aberration" />
+              </filter>
+            </defs>
+            <rect id="crt-beam" class="crt-beam" x="10" y="60" width="108" height="8" fill="#C88A58" />
+            <g id="layer-monitor"></g>
+            <g id="layer-prompt-chevron"></g>
+            <g id="layer-prompt-cursor"></g>
+            <g id="layer-terminal-text"></g>
+            <g id="layer-tan-box"></g>
+            <g id="layer-data-text"></g>
+            <g id="layer-magenta-icon"></g>
+            <g id="layer-subtext-arch"></g>
+            <g id="layer-subtext-mgmt"></g>
+          </svg>
         </div>
       </div>
 
-      <section class="cta-box">
-        <h2>Start with a Free Data &amp; Storage Triage</h2>
-        <p>
-          Not sure what is sitting on your old drives or how to organize a growing archive? Schedule a no-obligation 30-minute consultation. We will map out your current storage risks and give you a clear, plain-English action plan.
+      <div class="hero-copy">
+        <div class="eyebrow">BOISE, IDAHO // AIR-GAPPED SYSTEMS</div>
+        <h1>Your files, consolidated and under your control—without touching the cloud.</h1>
+        <p class="lead">
+          Terminal Data builds deterministic, local-first storage and archive systems for businesses, photographers, and families drowning in scattered drives and unindexed files.
         </p>
-        <div class="actions">
-          <a class="btn btn-primary" href="mailto:terminal.data.boi@gmail.com?subject=Terminal%20Data%20-%20Free%20Consultation">Request Consultation via Email</a>
-          <a class="btn btn-secondary" href="https://instagram.com/terminal.data" target="_blank" rel="noopener">DM @Terminal.Data</a>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#consultation">Book Free Data Triage</a>
+          <a class="btn btn-secondary" href="https://instagram.com/terminal.data" target="_blank" rel="noopener">@Terminal.Data</a>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+
+    <!-- Core Capabilities Grid -->
+    <section class="section" id="capabilities">
+      <div class="section-header">
+        <span class="mono-label">01 // ARCHITECTURE &amp; TRIAGE</span>
+        <h2>Deterministic Local Workflows</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-index">MODULE_01</div>
+          <h3>Drive Consolidation</h3>
+          <p>Merge years of loose external drives, SD cards, and legacy workstations into a single, deduplicated, human-readable directory hierarchy.</p>
+        </article>
+        <article class="card">
+          <div class="card-index">MODULE_02</div>
+          <h3>Media &amp; Record Indexing</h3>
+          <p>Automated EXIF chronological sorting for RAW/photo libraries, paired with local OCR extraction for legacy PDFs and business archives.</p>
+        </article>
+        <article class="card">
+          <div class="card-index">MODULE_03</div>
+          <h3>Sovereign Backups</h3>
+          <p>On-premise, air-gapped backup architectures engineered for multi-decade durability—zero recurring cloud fees or third-party exposure.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Free Consultation CTA -->
+    <section class="cta-box" id="consultation">
+      <div class="cta-content">
+        <div class="mono-label accent-tan">INITIAL DIAGNOSTIC // NO OBLIGATION</div>
+        <h2>Start with a Free 30-Minute Data &amp; Storage Triage</h2>
+        <p>
+          Not sure what is sitting on your old drives or how to structure a growing archive? We will map out your current storage footprint, identify silent data-rot risks, and hand you a plain-English action plan.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="mailto:terminal.data.boi@gmail.com?subject=Terminal%20Data%20-%20Free%20Consultation">Request Consultation via Email</a>
+          <a class="btn btn-outline-light" href="https://instagram.com/terminal.data" target="_blank" rel="noopener">DM @Terminal.Data</a>
+        </div>
+      </div>
+    </section>
 
     <footer>
-      <div>&copy; 2026 Terminal Data</div>
-      <div>ZERO CLOUD // ZERO TELEMETRY</div>
+      <div>&copy; 2026 TERMINAL DATA // BOISE, ID</div>
+      <div>ZERO CLOUD &bull; ZERO TELEMETRY &bull; 100% LOCAL</div>
     </footer>
   </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
-
