@@ -27,6 +27,7 @@
         <button id="btn-replay" class="pill-btn" type="button" title="Replay CRT Boot">↻ Replay</button>
         <button id="btn-theme" class="pill-btn" type="button">Dark CRT</button>
         <button id="btn-scanlines" class="pill-btn" type="button">Scanlines: On</button>
+        <button id="btn-audience" class="pill-btn audience-toggle" type="button" title="Switch audience mode">B2C</button>
       </div>
     </header>
 
@@ -61,13 +62,13 @@
       </div>
 
       <div class="hero-copy">
-        <div class="eyebrow">BOISE, IDAHO // AIR-GAPPED SYSTEMS</div>
-        <h1>Your files, consolidated and under your control—without touching the cloud.</h1>
-        <p class="lead">
-          Terminal Data builds deterministic, local-first storage and archive systems for businesses, photographers, and families drowning in scattered drives and unindexed files.
+        <div class="eyebrow" data-i18n="eyebrow">BOISE, IDAHO // PRIVATE PERSONAL ARCHIVES</div>
+        <h1 data-i18n="headline">Rescue your scattered photos, videos, and files—and keep them off the cloud.</h1>
+        <p class="lead" data-i18n="lead">
+          We gather decades of family memories and personal documents from old hard drives, phones, and laptops into one clean, private digital vault you actually own.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#consultation">Book Free Data Triage</a>
+          <a class="btn btn-primary" href="#consultation" data-i18n="heroBtn">Book Free Drive Checkup</a>
           <a class="btn btn-secondary" href="https://instagram.com/terminal.data" target="_blank" rel="noopener">@Terminal.Data</a>
         </div>
       </div>
@@ -76,24 +77,24 @@
     <!-- Core Capabilities Grid -->
     <section class="section" id="capabilities">
       <div class="section-header">
-        <span class="mono-label">01 // ARCHITECTURE &amp; TRIAGE</span>
-        <h2>Deterministic Local Workflows</h2>
+        <span class="mono-label" data-i18n="sectionLabel">01 // HOW WE HELP</span>
+        <h2 data-i18n="sectionTitle">Simple, Private File Organization</h2>
       </div>
       <div class="grid">
         <article class="card">
           <div class="card-index">MODULE_01</div>
-          <h3>Drive Consolidation</h3>
-          <p>Merge years of loose external drives, SD cards, and legacy workstations into a single, deduplicated, human-readable directory hierarchy.</p>
+          <h3 data-i18n="card1Title">Old Drive Rescue</h3>
+          <p data-i18n="card1Body">Gather years of loose hard drives, thumb drives, and memory cards into one clean, easy-to-browse folder system—with all duplicate files removed.</p>
         </article>
         <article class="card">
           <div class="card-index">MODULE_02</div>
-          <h3>Media &amp; Record Indexing</h3>
-          <p>Automated EXIF chronological sorting for RAW/photo libraries, paired with local OCR extraction for legacy PDFs and business archives.</p>
+          <h3 data-i18n="card2Title">Photo &amp; Document Sorting</h3>
+          <p data-i18n="card2Body">Automatically organize tens of thousands of family photos and videos by date, and make scanned paperwork and PDFs easy to search.</p>
         </article>
         <article class="card">
           <div class="card-index">MODULE_03</div>
-          <h3>Sovereign Backups</h3>
-          <p>On-premise, air-gapped backup architectures engineered for multi-decade durability—zero recurring cloud fees or third-party exposure.</p>
+          <h3 data-i18n="card3Title">Private Home Backups</h3>
+          <p data-i18n="card3Body">Set up a reliable, physical backup system right in your home that lasts for decades—with zero monthly cloud subscriptions or privacy leaks.</p>
         </article>
       </div>
     </section>
@@ -101,13 +102,13 @@
     <!-- Free Consultation CTA -->
     <section class="cta-box" id="consultation">
       <div class="cta-content">
-        <div class="mono-label accent-tan">INITIAL DIAGNOSTIC // NO OBLIGATION</div>
-        <h2>Start with a Free 30-Minute Data &amp; Storage Triage</h2>
-        <p>
-          Not sure what is sitting on your old drives or how to structure a growing archive? We will map out your current storage footprint, identify silent data-rot risks, and hand you a plain-English action plan.
+        <div class="mono-label accent-tan" data-i18n="ctaEyebrow">FREE CONSULTATION // NO PRESSURE</div>
+        <h2 data-i18n="ctaTitle">Start with a Free 30-Minute Photo &amp; File Checkup</h2>
+        <p data-i18n="ctaBody">
+          Not sure what is trapped on a drawer full of old hard drives or laptops? We will review what you have, flag any failing drives before memories are lost, and give you a simple plan to get everything organized.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:YOUR_EMAIL@DOMAIN.COM?subject=Terminal%20Data%20-%20Free%20Consultation">Request Consultation via Email</a>
+          <a class="btn btn-primary" id="mailto-link" href="mailto:YOUR_EMAIL@DOMAIN.COM?subject=Terminal%20Data%20-%20Free%20Personal%20Checkup" data-i18n-mailto>Request Consultation via Email</a>
           <a class="btn btn-outline-light" href="https://instagram.com/terminal.data" target="_blank" rel="noopener">DM @Terminal.Data</a>
         </div>
       </div>
