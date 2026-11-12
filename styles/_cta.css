@@ -11,6 +11,11 @@
   margin-bottom: var(--space-4xl);
 }
 
+.cta-content {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
 body.dark-mode .cta-box {
   background-color: #1A1D24;
   border: 1px solid var(--border-subtle);
