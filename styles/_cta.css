@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Terminal Data — CTA Box Component
+   ========================================================================== */
+
+.cta-box {
+  background-color: #121316;
+  color: #F4F5F7;
+  padding: var(--space-2xl);
+  border-left: 4px solid var(--earth-brown);
+  border-radius: 3px;
+  margin-bottom: var(--space-4xl);
+}
+
+body.dark-mode .cta-box {
+  background-color: #1A1D24;
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--earth-brown);
+}
+
+.cta-box h2 {
+  font-size: 1.45rem;
+  margin-bottom: var(--space-sm);
+}
+
+.cta-box p {
+  color: #CBD5E1;
+  max-width: 660px;
+  margin-bottom: var(--space-lg);
+  font-size: 0.98rem;
+}

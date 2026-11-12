@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Terminal Data — Custom Favicon Markers
+   ========================================================================== */
+
+.custom-favicon-marker {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  vertical-align: middle;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.custom-favicon-marker img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}

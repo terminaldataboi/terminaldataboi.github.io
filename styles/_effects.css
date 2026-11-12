@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Terminal Data — Effects (CRT, Scanlines, Ambient, Toast)
+   ========================================================================== */
+
+/* Ambient Backdrop Glow */
+.ambient-backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 28% 32%, var(--crt-glow) 0%, transparent 58%);
+  z-index: 0;
+}
+
+/* Scanline Overlay */
+.scanline-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(18, 19, 22, 0.03) 3px,
+    rgba(18, 19, 22, 0.03) 4px
+  );
+  transition: opacity 0.3s ease;
+}
+
+body.dark-mode .scanline-overlay {
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.28) 3px,
+    rgba(0, 0, 0, 0.28) 4px
+  );
+}
+
+.scanline-overlay.hidden-scanlines {
+  opacity: 0;
+}
+
+/* CRT Beam Animation */
+.crt-beam {
+  transform-origin: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes crtPowerBeam {
+  0% { opacity: 1; transform: scaleX(0.02) scaleY(0.015); }
+  45% { opacity: 1; transform: scaleX(1.04) scaleY(0.02); }
+  85% { opacity: 0.65; transform: scaleX(1) scaleY(1); }
+  100% { opacity: 0; transform: scaleX(1) scaleY(1); }
+}
+
+.animate-beam {
+  animation: crtPowerBeam 0.48s cubic-bezier(0.16, 1, 0.36, 1) forwards;
+}
+
+/* Cursor Blink */
+@keyframes cursorBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: cursorBlink 1.05s steps(1, end) infinite;
+}
+
+/* Pixel Glitch */
+@keyframes pixelGlitch {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-4px, 2px); }
+  40% { transform: translate(4px, -2px); }
+  60% { transform: translate(-2px, -1px); }
+  80% { transform: translate(2px, 1px); }
+  100% { transform: translate(0, 0); }
+}
+
+.glitch-active {
+  animation: pixelGlitch 0.26s steps(2, end);
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background: #121316;
+  color: #F4F5F7;
+  padding: 0.55rem 1rem;
+  border-radius: 3px;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  border-left: 3px solid var(--earth-brown);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+  z-index: 100;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}

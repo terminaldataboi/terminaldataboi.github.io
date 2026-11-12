@@ -1,0 +1,18 @@
+/* ==========================================================================
+   Terminal Data — Main Stylesheet
+   Aggregator: imports all modular pieces in load order.
+   ========================================================================== */
+
+@import url("_variables.css");
+@import url("_reset.css");
+@import url("_base.css");
+@import url("_layout.css");
+@import url("_effects.css");
+@import url("_header.css");
+@import url("_hero.css");
+@import url("_buttons.css");
+@import url("_cards.css");
+@import url("_cta.css");
+@import url("_footer.css");
+@import url("_favicon-markers.css");
+@import url("_responsive.css");

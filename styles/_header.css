@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Terminal Data — Top Bar / Header Component
+   ========================================================================== */
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: var(--space-3xl);
+}
+
+.brand-tag {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  color: var(--slate-dark);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--earth-brown);
+  box-shadow: 0 0 8px var(--earth-brown);
+}
+
+.status-dot.ready {
+  background-color: var(--crimson);
+  box-shadow: 0 0 8px var(--crimson);
+}
+
+.top-controls {
+  display: flex;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.pill-btn {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--surface-card);
+  color: var(--ink-black);
+  border: 1px solid var(--border-subtle);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: border-color var(--transition-base) ease, transform 0.1s ease;
+}
+
+.pill-btn:hover {
+  border-color: var(--earth-brown);
+}
+
+.pill-btn:active {
+  transform: scale(0.97);
+}

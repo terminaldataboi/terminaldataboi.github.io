@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Terminal Data — Layout
+   ========================================================================== */
+
+.ambient-backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 28% 32%, var(--crt-glow) 0%, transparent 58%);
+  z-index: 0;
+}
+
+.site-wrapper {
+  position: relative;
+  z-index: 10;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-xl) var(--space-5xl);
+}
