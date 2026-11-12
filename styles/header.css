@@ -61,3 +61,24 @@
 .pill-btn:active {
   transform: scale(0.97);
 }
+
+/* Arsenal nav link (shared across both pages) */
+.arsenal-nav-link {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--earth-brown);
+  text-decoration: none;
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--border-subtle);
+  border-radius: 3px;
+  transition: border-color var(--transition-base) ease, color var(--transition-base) ease;
+}
+
+.arsenal-nav-link:hover {
+  border-color: var(--earth-brown);
+  color: var(--ink-black);
+}
+
+body.dark-mode .arsenal-nav-link:hover {
+  color: var(--earth-brown);
+}

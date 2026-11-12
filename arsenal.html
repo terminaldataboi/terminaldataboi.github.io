@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terminal Data Arsenal — Proprietary zero-dependency command-line utilities for deterministic local data operations." />
+  <title>Terminal Data | Arsenal // Custom Engine & Tool Suite</title>
+  <!-- Custom Pixel Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/arsenal.css" />
+</head>
+<body>
+  <div class="ambient-backdrop"></div>
+  <div id="scanline-overlay" class="scanline-overlay"></div>
+  <div id="toast" class="toast">Boot sequence initialized</div>
+
+  <div class="site-wrapper">
+    <!-- Top Telemetry Navigation Bar -->
+    <header class="top-bar">
+      <div style="display:flex;align-items:center;gap:var(--space-md);">
+        <a class="arsenal-nav-link" href="index.html" title="Return to overview">← Overview</a>
+        <span class="brand-tag">
+          <span class="custom-favicon-marker" title="Terminal Data Active">
+            <img src="favicon.png" alt="" width="18" height="18" />
+          </span>
+          <span id="telemetry-text">SYS.ARSENAL // INITIALIZING...</span>
+        </span>
+      </div>
+      <div class="top-controls">
+        <button id="btn-replay" class="pill-btn" type="button" title="Replay CRT Boot">↻ Replay</button>
+        <button id="btn-theme" class="pill-btn" type="button">Dark CRT</button>
+        <button id="btn-scanlines" class="pill-btn" type="button">Scanlines: On</button>
+        <button id="btn-audience" class="pill-btn audience-toggle" type="button" title="Switch audience mode">B2C</button>
+      </div>
+    </header>
+
+    <!-- Hero Header -->
+    <section class="hero">
+      <div class="hero-visual">
+        <div id="logo-card" class="logo-card" title="Click to pulse CRT // Double-click to reboot">
+          <canvas id="ambient-canvas"></canvas>
+          <svg id="terminal-svg" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TERMINAL Data Architecture Management Logo">
+            <defs>
+              <filter id="crt-glitch-filter" x="-10%" y="-10%" width="120%" height="120%">
+                <feOffset in="SourceGraphic" dx="0" dy="0" result="redShift" id="glitch-r" />
+                <feOffset in="SourceGraphic" dx="0" dy="0" result="blueShift" id="glitch-b" />
+                <feColorMatrix in="redShift" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.7 0" result="redOnly" />
+                <feColorMatrix in="blueShift" type="matrix" values="0 0 0 0 0  0 0.6 0 0 0  0 0 1 0 0  0 0 0 0.7 0" result="cyanOnly" />
+                <feBlend mode="screen" in="redOnly" in2="cyanOnly" result="aberration" />
+                <feBlend mode="normal" in="SourceGraphic" in2="aberration" />
+              </filter>
+            </defs>
+            <rect id="crt-beam" class="crt-beam" x="10" y="60" width="108" height="8" fill="#C88A58" />
+            <g id="layer-monitor"></g>
+            <g id="layer-prompt-chevron"></g>
+            <g id="layer-prompt-cursor"></g>
+            <g id="layer-terminal-text"></g>
+            <g id="layer-tan-box"></g>
+            <g id="layer-data-text"></g>
+            <g id="layer-magenta-icon"></g>
+            <g id="layer-subtext-arch"></g>
+            <g id="layer-subtext-mgmt"></g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero-copy">
+        <div class="eyebrow" data-i18n="arsenalEyebrow">CUSTOM-BUILT INSTRUMENTS // ZERO CLOUD MIDDLEMEN</div>
+        <h1 data-i18n="arsenalTitle">Purpose-Built Tools Crafted for Irreplaceable Files.</h1>
+        <p class="lead" data-i18n="arsenalLead">
+          Off-the-shelf apps are designed for convenience, not care—often compressing your photos, locking your files into proprietary formats, or uploading them to corporate servers. We build our own precision tools from scratch to sort, clean, and protect your personal archives safely on your own hardware.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 01: Comparison Matrix -->
+    <section class="arsenal-section" id="comparison">
+      <div class="section-header">
+        <span class="mono-label" data-i18n="section01Label">01 // EXECUTION PARADIGM</span>
+        <h2 data-i18n="section01Title">Why Custom Code Outperforms Off-the-Shelf Software</h2>
+      </div>
+
+      <div class="comparison-matrix">
+        <!-- Header Row -->
+        <div class="comparison-header">
+          <div class="comparison-header-cell">PILLAR</div>
+          <div class="comparison-header-cell">OFF-THE-SHELF SAAS & GUI APPS</div>
+          <div class="comparison-header-cell">TERMINAL DATA CUSTOM TOOLCHAIN</div>
+        </div>
+
+        <!-- Row 1: Throughput -->
+        <div class="comparison-row">
+          <div class="comparison-cell"><span class="comparison-pill negative">WEAK</span>Throughput &amp; Overhead</div>
+          <div class="comparison-cell"><span class="comparison-pill negative">SLOW</span>Browser/GUI bottlenecks and background telemetry slow operations to a crawl.</div>
+          <div class="comparison-cell"><span class="comparison-pill positive">FAST</span>Direct filesystem I/O processes terabytes in minutes with zero overhead.</div>
+        </div>
+
+        <!-- Row 2: Integrity -->
+        <div class="comparison-row">
+          <div class="comparison-cell"><span class="comparison-pill negative">RISK</span>Data Integrity</div>
+          <div class="comparison-cell"><span class="comparison-pill negative">LOSSY</span>Silent metadata stripping, lossy re-encoding, and opaque black-box databases.</div>
+          <div class="comparison-cell"><span class="comparison-pill positive">EXACT</span>Bit-exact preservation with cryptographic checksum verification on every file.</div>
+        </div>
+
+        <!-- Row 3: Privacy -->
+        <div class="comparison-row">
+          <div class="comparison-cell"><span class="comparison-pill negative">EXPOSED</span>Privacy &amp; Custody</div>
+          <div class="comparison-cell"><span class="comparison-pill negative">CLOUD</span>Mandatory cloud uploads and third-party API exposure by design.</div>
+          <div class="comparison-cell"><span class="comparison-pill positive">AIR-GAPPED</span>100% air-gapped local execution—zero bytes leave your hardware.</div>
+        </div>
+
+        <!-- Row 4: Longevity -->
+        <div class="comparison-row">
+          <div class="comparison-cell"><span class="comparison-pill negative">LOCKED</span>Longevity &amp; Ownership</div>
+          <div class="comparison-cell"><span class="comparison-pill negative">SUBSCRIPTION</span>Recurring subscriptions, deprecated APIs, and vendor lock-in.</div>
+          <div class="comparison-cell"><span class="comparison-pill positive">PERMANENT</span>Self-contained, human-readable directory trees accessible for decades.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 02: Instrument Suite -->
+    <section class="arsenal-section" id="instruments">
+      <div class="section-header">
+        <span class="mono-label" data-i18n="section02Label">02 // ACTIVE INSTRUMENT SUITE</span>
+        <h2 data-i18n="section02Title">Specialized Utilities for Deterministic Data Operations</h2>
+      </div>
+
+      <div class="instrument-grid">
+        <!-- INSTRUMENT_01: SCOUT -->
+        <article class="instrument-card">
+          <div class="instrument-index">INSTRUMENT_01</div>
+          <h3 class="instrument-name" data-i18n="scoutName">SCOUT</h3>
+          <div class="instrument-subtitle" data-i18n="scoutSubtitle">Pre-Flight Auditor &amp; Recon Engine (Read-Only)</div>
+          <span class="instrument-badge" data-i18n="scoutBadge">RECON</span>
+          <p class="instrument-desc" data-i18n="scoutDesc">Safely inventories every file across old hard drives and laptops first, flagging failing drives and storage anomalies before a single file is moved.</p>
+        </article>
+
+        <!-- INSTRUMENT_02: TOMAHAWK -->
+        <article class="instrument-card">
+          <div class="instrument-index">INSTRUMENT_02</div>
+          <h3 class="instrument-name" data-i18n="tomahawkName">TOMAHAWK</h3>
+          <div class="instrument-subtitle" data-i18n="tomahawkSubtitle">Logistics &amp; Transport Engine (Inbound/Outbound)</div>
+          <span class="instrument-badge" data-i18n="tomahawkBadge">TRANSPORT</span>
+          <p class="instrument-desc" data-i18n="tomahawkDesc">Moves massive photo libraries and archives swiftly and securely between local drives without relying on slow or insecure cloud transfers.</p>
+        </article>
+
+        <!-- INSTRUMENT_03: SAMURAI -->
+        <article class="instrument-card">
+          <div class="instrument-index">INSTRUMENT_03</div>
+          <h3 class="instrument-name" data-i18n="samuraiName">SAMURAI</h3>
+          <div class="instrument-subtitle" data-i18n="samuraiSubtitle">Router &amp; Dispatcher (Central Brain)</div>
+          <span class="instrument-badge" data-i18n="samuraiBadge">ROUTING</span>
+          <p class="instrument-desc" data-i18n="samuraiDesc">Automatically inspects and sorts mixed incoming files behind the scenes, routing every document, photo, and spreadsheet to its proper specialist handler.</p>
+        </article>
+
+        <!-- INSTRUMENT_04: KATANA (Media Specialist) -->
+        <article class="instrument-card">
+          <div class="instrument-index">INSTRUMENT_04</div>
+          <h3 class="instrument-name" data-i18n="katanaName">KATANA</h3>
+          <div class="instrument-subtitle" data-i18n="katanaSubtitle">Media Specialist (Images &amp; Videos)</div>
+          <span class="instrument-badge" data-i18n="katanaBadge">MEDIA</span>
+          <p class="instrument-desc" data-i18n="katanaDesc">Untangles mixed phone backups and SD cards into clean year/month/event folders automatically.</p>
+        </article>
+
+        <!-- INSTRUMENT_05: STILETTO (PDF Specialist) -->
+        <article class="instrument-card">
+          <div class="instrument-index">INSTRUMENT_05</div>
+          <h3 class="instrument-name" data-i18n="stilettoName">STILETTO</h3>
+          <div class="instrument-subtitle" data-i18n="stilettoSubtitle">Document Specialist (PDFs)</div>
+          <span class="instrument-badge" data-i18n="stilettoBadge">DOCUMENTS</span>
+          <p class="instrument-desc" data-i18n="stilettoDesc">Turns boxes of scanned tax forms and paperwork into searchable digital records.</p>
+        </article>
+
+        <!-- INSTRUMENT_06: SCYTHE (Tabular Data Specialist) -->
+        <article class="instrument-card">
+          <div class="instrument-index">INSTRUMENT_06</div>
+          <h3 class="instrument-name" data-i18n="scytheName">SCYTHE</h3>
+          <div class="instrument-subtitle" data-i18n="scytheSubtitle">Tabular Data Specialist</div>
+          <span class="instrument-badge" data-i18n="scytheBadge">TABULAR</span>
+          <p class="instrument-desc" data-i18n="scytheDesc">Harmonizes mixed spreadsheet formats and purges redundant tabular clutter.</p>
+        </article>
+
+        <!-- INSTRUMENT_07: RAPIER (Text Specialist) -->
+        <article class="instrument-card">
+          <div class="instrument-index">INSTRUMENT_07</div>
+          <h3 class="instrument-name" data-i18n="rapierName">RAPIER</h3>
+          <div class="instrument-subtitle" data-i18n="rapierSubtitle">Text Specialist (Word Docs &amp; Text)</div>
+          <span class="instrument-badge" data-i18n="rapierBadge">TEXT</span>
+          <p class="instrument-desc" data-i18n="rapierDesc">Strips formatting bloat from old personal notes and text documents.</p>
+        </article>
+
+        <!-- INSTRUMENT_08: MACHETE (Archive Specialist) -->
+        <article class="instrument-card">
+          <div class="instrument-index">INSTRUMENT_08</div>
+          <h3 class="instrument-name" data-i18n="macheteName">MACHETE</h3>
+          <div class="instrument-subtitle" data-i18n="macheteSubtitle">Archive Specialist (Compressed &amp; Legacy)</div>
+          <span class="instrument-badge" data-i18n="macheteBadge">ARCHIVES</span>
+          <p class="instrument-desc" data-i18n="macheteDesc">Cleans up chaotic nested zip files and purges hidden junk files across old backups.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 03: Safety Protocol -->
+    <section class="arsenal-section" id="safety">
+      <div class="safety-protocol">
+        <div class="safety-protocol-header">
+          <span class="mono-label accent-tan" data-i18n="section03Label">03 // SAFETY PROTOCOL</span>
+          <h2 data-i18n="section03Title">Three Non-Negotiable Engineering Rules</h2>
+          <p>Built into every Terminal Data tool—no exceptions.</p>
+        </div>
+
+        <div class="safety-rules">
+          <div class="safety-rule">
+            <div class="safety-rule-index">RULE_01</div>
+            <h3 data-i18n="safetyRule1Title">Read-Only Discovery First</h3>
+            <p data-i18n="safetyRule1Desc">No file is ever modified until a full pre-flight inventory is logged.</p>
+          </div>
+
+          <div class="safety-rule">
+            <div class="safety-rule-index">RULE_02</div>
+            <h3 data-i18n="safetyRule2Title">Non-Destructive Execution</h3>
+            <p data-i18n="safetyRule2Desc">Operations default to verified copy-and-hash workflows rather than in-place overwrites.</p>
+          </div>
+
+          <div class="safety-rule">
+            <div class="safety-rule-index">RULE_03</div>
+            <h3 data-i18n="safetyRule3Title">Plain-Text Audit Manifests</h3>
+            <p data-i18n="safetyRule3Desc">Clients receive a human-readable ledger detailing every file processed, moved, or deduplicated.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="arsenal-cta" id="consultation">
+      <div class="cta-content">
+        <div class="mono-label accent-tan" data-i18n="arsenalCtaEyebrow">FREE CONSULTATION // NO PRESSURE</div>
+        <h2 data-i18n="arsenalCtaTitle">Start with a Free 30-Minute Photo &amp; File Checkup</h2>
+        <p data-i18n="arsenalCtaBody">
+          Not sure what is trapped on a drawer full of old hard drives or laptops? We will review what you have, flag any failing drives before memories are lost, and give you a simple plan to get everything organized.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" id="mailto-link" href="mailto:YOUR_EMAIL@DOMAIN.COM?subject=Terminal%20Data%20-%20Free%20Personal%20Checkup" data-i18n-mailto>Request Consultation via Email</a>
+          <a class="btn btn-outline-light" href="https://instagram.com/terminal.data" target="_blank" rel="noopener">DM @Terminal.Data</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-left">
+        <span class="footer-icon"><img src="favicon.png" alt="" width="16" height="16" /></span>
+        <span>&copy; 2026 TERMINAL DATA // BOISE, ID</span>
+      </div>
+      <div>ZERO CLOUD &bull; ZERO TELEMETRY &bull; 100% LOCAL</div>
+    </footer>
+  </div>
+
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

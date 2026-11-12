@@ -6,6 +6,7 @@
 // ===========================================================================
 
 import { PALETTE, TOAST_MESSAGES, COPY, getMode, setMode, loadSavedMode } from "./config.js";
+import { ARSENAL_COPY } from "./arsenal-copy.js";
 import { triggerGlitch, isCurrentlyBooting } from "./boot-sequence.js";
 
 let isDarkMode = false;
@@ -36,11 +37,17 @@ const MODE_TOAST = { b2b: "Business (B2B) mode", b2c: "Personal (B2C) mode" };
 
 function swapCopy() {
   const mode = getMode();
-  const dict = COPY;
+
+  // Determine which dictionary to use based on current page
+  const isArsenal = window.location.pathname.includes("arsenal.html") || window.location.pathname.endsWith("/arsenal");
+  const baseDict = COPY;
+  const arsenalDict = ARSENAL_COPY;
 
   // Text content swaps for data-i18n elements
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
+    // Try arsenal dict first (arsenal-specific keys), then fall back to base dict
+    const dict = isArsenal ? arsenalDict : baseDict;
     if (dict[key] && dict[key][mode]) {
       el.textContent = dict[key][mode];
     }
@@ -48,9 +55,13 @@ function swapCopy() {
 
   // Mailto link subject line swap
   const mailtoLink = document.getElementById("mailto-link");
-  if (mailtoLink && dict.mailtoSubject && dict.mailtoSubject[mode]) {
-    const encoded = encodeURIComponent(dict.mailtoSubject[mode]);
-    mailtoLink.href = `mailto:YOUR_EMAIL@DOMAIN.COM?subject=${encoded}`;
+  if (mailtoLink) {
+    const mailtoDict = isArsenal ? arsenalDict : baseDict;
+    const mailtoKey = isArsenal ? "arsenalCtaMailtoSubject" : "mailtoSubject";
+    if (mailtoDict[mailtoKey] && mailtoDict[mailtoKey][mode]) {
+      const encoded = encodeURIComponent(mailtoDict[mailtoKey][mode]);
+      mailtoLink.href = `mailto:YOUR_EMAIL@DOMAIN.COM?subject=${encoded}`;
+    }
   }
 
   // Update toggle button label
