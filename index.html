@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Terminal Data — Air-gapped local data sovereignty, drive consolidation, and archive architecture in Boise, Idaho." />
   <title>Terminal Data | Local Data Sovereignty &amp; Archive Architecture</title>
+  <!-- Custom Pixel Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -13,10 +15,12 @@
   <div id="toast" class="toast">Boot sequence initialized</div>
 
   <div class="site-wrapper">
-    <!-- Top Telemetry Navigation Bar -->
+    <!-- Top Telemetry Navigation Bar with Custom Pixel Icon -->
     <header class="top-bar">
       <div class="brand-tag">
-        <span id="status-dot" class="status-dot"></span>
+        <span class="custom-favicon-marker" title="Terminal Data Active">
+          <img src="favicon.png" alt="" />
+        </span>
         <span id="telemetry-text">SYS.BOOT // INITIALIZING...</span>
       </div>
       <div class="top-controls">
@@ -26,7 +30,7 @@
       </div>
     </header>
 
-    <!-- Hero Section: Split CRT Animation + Value Proposition -->
+    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-visual">
         <div id="logo-card" class="logo-card" title="Click to pulse CRT // Double-click to reboot">
@@ -103,14 +107,18 @@
           Not sure what is sitting on your old drives or how to structure a growing archive? We will map out your current storage footprint, identify silent data-rot risks, and hand you a plain-English action plan.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:terminal.data.boi@gmail.com?subject=Terminal%20Data%20-%20Free%20Consultation">Request Consultation via Email</a>
+          <a class="btn btn-primary" href="mailto:YOUR_EMAIL@DOMAIN.COM?subject=Terminal%20Data%20-%20Free%20Consultation">Request Consultation via Email</a>
           <a class="btn btn-outline-light" href="https://instagram.com/terminal.data" target="_blank" rel="noopener">DM @Terminal.Data</a>
         </div>
       </div>
     </section>
 
+    <!-- Footer with Favicon Accent -->
     <footer>
-      <div>&copy; 2026 TERMINAL DATA // BOISE, ID</div>
+      <div class="footer-left">
+        <span class="footer-icon"><img src="favicon.png" alt="" /></span>
+        <span>&copy; 2026 TERMINAL DATA // BOISE, ID</span>
+      </div>
       <div>ZERO CLOUD &bull; ZERO TELEMETRY &bull; 100% LOCAL</div>
     </footer>
   </div>

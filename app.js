@@ -248,11 +248,9 @@
     isBooting = true;
 
     const telemetry = document.getElementById("telemetry-text");
-    const statusDot = document.getElementById("status-dot");
     const ambientCanvas = document.getElementById("ambient-canvas");
     const beam = document.getElementById("crt-beam");
 
-    statusDot.classList.remove("ready");
     ambientCanvas.classList.remove("active");
     telemetry.textContent = "SYS.BOOT // CRT_BEAM_IGNITION...";
 
@@ -351,7 +349,6 @@
 
     schedule(() => {
       isBooting = false;
-      statusDot.classList.add("ready");
       ambientCanvas.classList.add("active");
       telemetry.textContent = "TERMINAL.OS // ONLINE — BOISE, ID";
     }, 2550);
