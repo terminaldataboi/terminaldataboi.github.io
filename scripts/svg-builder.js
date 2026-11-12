@@ -14,7 +14,7 @@ export function addPixelRect(parent, x, y, w, h, colorKey, extraClass = "") {
   rect.setAttribute("width", w);
   rect.setAttribute("height", h);
   rect.setAttribute("data-color-key", colorKey);
-  rect.setAttribute("fill", PALETTE[colorKey]);
+  rect.setAttribute("fill", PALETTE.light[colorKey]);
   if (extraClass) rect.setAttribute("class", extraClass);
   parent.appendChild(rect);
   return rect;
