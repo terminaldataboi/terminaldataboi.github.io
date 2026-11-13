@@ -88,8 +88,8 @@ body.dark-mode .scanline-overlay {
   position: fixed;
   bottom: 1.25rem;
   right: 1.25rem;
-  background: #121316;
-  color: #F4F5F7;
+  background: var(--ink-black);
+  color: var(--bg-canvas);
   padding: 0.55rem 1rem;
   border-radius: 3px;
   font-family: var(--mono);

@@ -3,8 +3,8 @@
    ========================================================================== */
 
 .cta-box {
-  background-color: #121316;
-  color: #F4F5F7;
+  background-color: var(--ink-black);
+  color: var(--bg-canvas);
   padding: var(--space-2xl);
   border-left: 4px solid var(--earth-brown);
   border-radius: 3px;
@@ -17,18 +17,19 @@
 }
 
 body.dark-mode .cta-box {
-  background-color: #1A1D24;
-  border: 1px solid var(--border-subtle);
+  background-color: var(--ink-black);
+  color: var(--bg-canvas);
   border-left: 4px solid var(--earth-brown);
 }
 
 .cta-box h2 {
-  font-size: 1.45rem;
+  font-family: var(--header);
+  font-size: 1.2rem;
   margin-bottom: var(--space-sm);
 }
 
 .cta-box p {
-  color: #CBD5E1;
+  color: var(--bg-canvas);
   max-width: 660px;
   margin-bottom: var(--space-lg);
   font-size: 0.98rem;

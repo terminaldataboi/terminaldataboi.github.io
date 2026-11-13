@@ -9,7 +9,7 @@ body {
     linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
   background-size: var(--grid-size) var(--grid-size);
   color: var(--ink-black);
-  font-family: var(--sans);
+  font-family: var(--body) !important;
   line-height: 1.6;
   transition: background-color var(--transition-slow) ease, color var(--transition-slow) ease;
   overflow-x: hidden;

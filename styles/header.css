@@ -7,20 +7,20 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--space-md);
-  padding-bottom: var(--space-sm);
+  gap: var(--space-xs);
+  padding-bottom: 0;
   border-bottom: 1px solid var(--border-subtle);
-  margin-bottom: var(--space-3xl);
+  margin-bottom: var(--space-xl);
 }
 
 .brand-tag {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  font-family: var(--mono);
-  font-size: 0.76rem;
-  letter-spacing: 0.05em;
-  color: var(--slate-dark);
+  gap: var(--space-xs);
+  font-family: var(--midbold);
+  font-size: 0.55rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-black);
 }
 
 .status-dot {
@@ -43,12 +43,12 @@
 }
 
 .pill-btn {
-  font-family: var(--mono);
-  font-size: 0.74rem;
-  padding: var(--space-xs) var(--space-sm);
-  background: var(--surface-card);
-  color: var(--ink-black);
-  border: 1px solid var(--border-subtle);
+  font-family: var(--midbold);
+  font-size: 0.53rem;
+  padding: 3px 6px;
+  background: var(--slate-dark);
+  color: var(--bg-canvas);
+  border: 1px solid rgba(251, 250, 245, 0.12);
   border-radius: 3px;
   cursor: pointer;
   transition: border-color var(--transition-base) ease, transform 0.1s ease;
@@ -62,13 +62,19 @@
   transform: scale(0.97);
 }
 
+body.dark-mode .pill-btn {
+  background: var(--surface-card);
+  color: var(--ink-black);
+  border: 1px solid rgba(232, 228, 223, 0.12);
+}
+
 /* Arsenal nav link (shared across both pages) */
 .arsenal-nav-link {
-  font-family: var(--mono);
-  font-size: 0.74rem;
+  font-family: var(--midbold);
+  font-size: 0.53rem;
   color: var(--earth-brown);
   text-decoration: none;
-  padding: var(--space-xs) var(--space-sm);
+  padding: 3px 6px;
   border: 1px solid var(--border-subtle);
   border-radius: 3px;
   transition: border-color var(--transition-base) ease, color var(--transition-base) ease;

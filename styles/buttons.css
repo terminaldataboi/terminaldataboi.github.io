@@ -20,17 +20,17 @@
 
 .btn-primary {
   background-color: var(--crimson);
-  color: #FFFFFF;
+  color: var(--bg-canvas);
 }
 
 .btn-secondary {
-  background-color: var(--surface-card);
-  color: var(--ink-black);
-  border: 1px solid var(--border-subtle);
+  background-color: var(--slate-dark);
+  color: var(--bg-canvas);
+  border: 1px solid rgba(251, 250, 245, 0.12);
 }
 
 .btn-outline-light {
   background-color: transparent;
-  color: #F4F5F7;
-  border: 1px solid var(--earth-brown);
+  color: var(--bg-canvas);
+  border: 1px solid var(--bg-canvas);
 }

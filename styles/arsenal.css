@@ -25,27 +25,27 @@
 }
 
 .comparison-header-cell {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-family: var(--midbold);
+  font-size: 0.78rem;
   letter-spacing: 0.06em;
   padding: var(--space-md) var(--space-lg);
   text-align: center;
   border-bottom: 2px solid var(--earth-brown);
-  background: var(--surface-card);
+  background: var(--slate-dark);
+  color: var(--bg-canvas);
 }
 
 .comparison-header-cell:first-child {
   text-align: left;
-  color: var(--slate-dark);
+  color: var(--bg-canvas);
 }
 
 .comparison-header-cell:nth-child(2) {
-  color: var(--crimson);
+  color: var(--bg-canvas);
 }
 
 .comparison-header-cell:nth-child(3) {
-  color: var(--earth-brown);
+  color: var(--bg-canvas);
 }
 
 .comparison-row {
@@ -58,37 +58,52 @@
   font-size: 0.92rem;
   line-height: 1.55;
   vertical-align: top;
+  background: transparent;
 }
 
 .comparison-cell:first-child {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--ink-black);
-  background: var(--surface-card);
-  border-right: 1px solid var(--border-subtle);
+  font-family: var(--midbold);
+  font-size: 0.82rem;
+  color: var(--bg-canvas);
+  background: var(--slate-dark);
+  border-right: 1px solid rgba(251, 250, 245, 0.12);
   display: flex;
   align-items: center;
 }
 
+/* Dark mode: column 1 = slate bg, white text */
 body.dark-mode .comparison-cell:first-child {
-  color: var(--earth-brown);
+  color: var(--bg-canvas);
+  background: var(--surface-card);
+  border-right: 1px solid rgba(251, 250, 245, 0.12);
 }
 
 .comparison-cell:nth-child(2) {
-  color: var(--crimson);
+  color: var(--ink-black);
   border-right: 1px solid var(--border-subtle);
 }
 
 .comparison-cell:nth-child(3) {
-  color: var(--earth-brown);
+  color: var(--ink-black);
+}
+
+/* Dark mode: columns 2-3, rows 2-5 = transparent bg, slate text */
+body.dark-mode .comparison-cell:nth-child(2),
+body.dark-mode .comparison-cell:nth-child(3) {
+  background: var(--surface-card);
+  color: var(--bg-canvas);
+  border-right: 1px solid var(--border-subtle);
+}
+
+body.dark-mode .comparison-cell:nth-child(3) {
+  border-right: none;
 }
 
 /* Pill badges inside comparison cells */
 .comparison-pill {
   display: inline-block;
-  font-family: var(--mono);
-  font-size: 0.68rem;
+  font-family: var(--midbold);
+  font-size: 0.72rem;
   padding: 2px 8px;
   border-radius: 2px;
   margin-bottom: var(--space-xs);
@@ -114,8 +129,8 @@ body.dark-mode .comparison-cell:first-child {
 }
 
 .instrument-card {
-  background: var(--surface-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--slate-dark);
+  border: 1px solid rgba(251, 250, 245, 0.12);
   border-top: 3px solid var(--earth-brown);
   padding: 1.4rem;
   transition: border-top-color var(--transition-base) ease, box-shadow var(--transition-base) ease;
@@ -126,37 +141,56 @@ body.dark-mode .comparison-cell:first-child {
   box-shadow: 0 4px 20px rgba(18, 19, 22, 0.06);
 }
 
+body.dark-mode .instrument-card {
+  background: var(--surface-card);
+  border: 1px solid rgba(232, 228, 223, 0.12);
+  border-top: 3px solid var(--earth-brown);
+}
+
 body.dark-mode .instrument-card:hover {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+body.dark-mode .instrument-name {
+  color: var(--bg-canvas);
+}
+
+body.dark-mode .instrument-subtitle {
+  color: var(--bg-canvas);
+}
+
+body.dark-mode .instrument-desc {
+  color: var(--bg-canvas);
+}
+
 .instrument-index {
-  font-family: var(--mono);
-  font-size: 0.7rem;
+  font-family: var(--midbold);
+  font-size: 0.76rem;
   color: var(--earth-brown);
   letter-spacing: 0.04em;
   margin-bottom: var(--space-xs);
 }
 
 .instrument-name {
-  font-size: 1.2rem;
+  font-family: var(--header);
+  font-size: 1.0rem;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   margin-bottom: var(--space-xs);
+  color: var(--bg-canvas);
 }
 
 .instrument-subtitle {
-  font-family: var(--mono);
-  font-size: 0.76rem;
-  color: var(--slate-dark);
+  font-family: var(--midbold);
+  font-size: 0.78rem;
+  color: var(--bg-canvas);
   margin-bottom: var(--space-sm);
 }
 
 .instrument-badge {
   display: inline-block;
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  font-weight: 700;
+  font-family: var(--midbold);
+  font-size: 0.7rem;
   letter-spacing: 0.08em;
   padding: 3px 10px;
   border-radius: 2px;
@@ -167,23 +201,23 @@ body.dark-mode .instrument-card:hover {
 
 .instrument-desc {
   font-size: 0.92rem;
-  color: var(--slate-dark);
+  color: var(--bg-canvas);
   line-height: 1.55;
 }
 
 /* ---- Safety Protocol (Section 03) ---- */
 
 .safety-protocol {
-  background-color: #121316;
-  color: #F4F5F7;
+  background-color: var(--ink-black);
+  color: var(--bg-canvas);
   padding: var(--space-2xl);
   border-left: 4px solid var(--earth-brown);
   border-radius: 3px;
 }
 
 body.dark-mode .safety-protocol {
-  background-color: #1A1D24;
-  border: 1px solid var(--border-subtle);
+  background-color: var(--surface-card);
+  border: 1px solid rgba(232, 228, 223, 0.12);
   border-left: 4px solid var(--earth-brown);
 }
 
@@ -192,13 +226,22 @@ body.dark-mode .safety-protocol {
 }
 
 .safety-protocol-header h2 {
-  font-size: 1.35rem;
+  font-family: var(--header);
+  font-size: 1.15rem;
   margin-bottom: var(--space-xs);
+}
+
+body.dark-mode .safety-protocol-header h2 {
+  color: var(--bg-canvas);
 }
 
 .safety-protocol-header p {
   font-size: 0.92rem;
-  color: #CBD5E1;
+  color: var(--bg-canvas);
+}
+
+body.dark-mode .safety-protocol-header p {
+  color: var(--bg-canvas);
 }
 
 .safety-rules {
@@ -218,30 +261,39 @@ body.dark-mode .safety-protocol {
 }
 
 .safety-rule-index {
-  font-family: var(--mono);
-  font-size: 0.7rem;
+  font-family: var(--midbold);
+  font-size: 0.76rem;
   color: var(--earth-brown);
   letter-spacing: 0.06em;
   margin-bottom: var(--space-xs);
 }
 
 .safety-rule h3 {
-  font-size: 1.05rem;
+  font-family: var(--header);
+  font-size: 0.85rem;
   margin-bottom: var(--space-xs);
-  color: #F4F5F7;
+  color: var(--bg-canvas);
+}
+
+body.dark-mode .safety-rule h3 {
+  color: var(--bg-canvas);
 }
 
 .safety-rule p {
   font-size: 0.88rem;
-  color: #94A3B8;
+  color: var(--bg-canvas);
   line-height: 1.55;
+}
+
+body.dark-mode .safety-rule p {
+  color: var(--ink-black);
 }
 
 /* ---- Arsenal CTA (dark variant) ---- */
 
 .arsenal-cta {
-  background-color: #121316;
-  color: #F4F5F7;
+  background-color: var(--ink-black);
+  color: var(--bg-canvas);
   padding: var(--space-2xl);
   border-left: 4px solid var(--earth-brown);
   border-radius: 3px;
@@ -249,21 +301,30 @@ body.dark-mode .safety-protocol {
 }
 
 body.dark-mode .arsenal-cta {
-  background-color: #1A1D24;
-  border: 1px solid var(--border-subtle);
+  background-color: var(--surface-card);
+  border: 1px solid rgba(232, 228, 223, 0.12);
   border-left: 4px solid var(--earth-brown);
 }
 
 .arsenal-cta h2 {
-  font-size: 1.45rem;
+  font-family: var(--header);
+  font-size: 1.2rem;
   margin-bottom: var(--space-sm);
 }
 
+body.dark-mode .arsenal-cta h2 {
+  color: var(--bg-canvas);
+}
+
 .arsenal-cta p {
-  color: #CBD5E1;
+  color: var(--bg-canvas);
   max-width: 660px;
   margin-bottom: var(--space-lg);
   font-size: 0.98rem;
+}
+
+body.dark-mode .arsenal-cta p {
+  color: var(--ink-black);
 }
 
 /* ---- Responsive ---- */

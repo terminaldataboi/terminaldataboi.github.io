@@ -5,9 +5,9 @@
 footer {
   border-top: 1px solid var(--border-subtle);
   padding-top: var(--space-lg);
-  font-family: var(--mono);
+  font-family: var(--body);
   font-size: 0.76rem;
-  color: var(--slate-dark);
+  color: var(--ink-black);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

@@ -12,11 +12,20 @@
 
 .mono-label {
   display: block;
-  font-family: var(--mono);
-  font-size: 0.76rem;
+  font-family: var(--midbold);
+  font-size: 0.85rem;
   letter-spacing: 0.06em;
-  color: var(--slate-dark);
+  color: var(--ink-black);
   margin-bottom: var(--space-xs);
+}
+
+/* Dark mode: section labels get slate background, white text */
+body.dark-mode .mono-label {
+  color: var(--earth-brown);
+}
+
+body.dark-mode .accent-tan {
+  color: var(--earth-brown);
 }
 
 .accent-tan {
@@ -24,8 +33,9 @@
 }
 
 .section-header h2 {
-  font-size: 1.5rem;
-  letter-spacing: -0.01em;
+  font-family: var(--header);
+  font-size: 1.3rem;
+  letter-spacing: 0;
 }
 
 .grid {
@@ -35,9 +45,9 @@
 }
 
 .card {
-  background: var(--surface-card);
-  border: 1px solid var(--border-subtle);
-  border-top: 3px solid var(--slate-dark);
+  background: var(--slate-dark);
+  border: 1px solid rgba(232, 228, 223, 0.12);
+  border-top: 3px solid var(--earth-brown);
   padding: 1.4rem;
   transition: border-top-color var(--transition-base) ease;
 }
@@ -47,18 +57,29 @@
 }
 
 .card-index {
-  font-family: var(--mono);
-  font-size: 0.72rem;
+  font-family: var(--midbold);
+  font-size: 0.78rem;
   color: var(--earth-brown);
   margin-bottom: var(--space-xs);
 }
 
 .card h3 {
-  font-size: 1.1rem;
+  font-family: var(--header);
+  font-size: 0.95rem;
   margin-bottom: var(--space-sm);
+  color: var(--bg-canvas);
 }
 
-.card p {
-  font-size: 0.94rem;
-  color: var(--slate-dark);
+body.dark-mode .card {
+  background: var(--surface-card);
+  border: 1px solid rgba(232, 228, 223, 0.12);
+  border-top: 3px solid var(--earth-brown);
+}
+
+body.dark-mode .card h3 {
+  color: var(--bg-canvas);
+}
+
+body.dark-mode .card p {
+  color: var(--ink-black);
 }

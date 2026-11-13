@@ -8,16 +8,16 @@ const SVG_NS = "http://www.w3.org/2000/svg";
 
 export const PALETTE = {
   light: {
-    slate: "#2D3748",
-    charcoal: "#121316",
-    tan: "#C88A58",
-    magenta: "#C71D45"
+    slate: "#39495E",
+    charcoal: "#071907",
+    tan: "#F5CB61",
+    magenta: "#DB1F47"
   },
   dark: {
-    slate: "#64748B",
-    charcoal: "#F4F5F7",
-    tan: "#D49B6A",
-    magenta: "#E12D56"
+    slate: "#6B7B8D",
+    charcoal: "#E8E4DF",
+    tan: "#B8A070",
+    magenta: "#C45A6A"
   }
 };
 
@@ -47,7 +47,7 @@ export const BOOT_TIMING = {
   particleSizeLarge: 3,
   particleSizeSmall: 2,
   largeParticleThreshold: 0.65,
-  ambientColors: ["#C88A58", "#C71D45", "#2D3748"]
+  ambientColors: ["#F5CB61", "#DB1F47", "#39495E"]
 };
 
 export const GLYPHS = {

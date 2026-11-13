@@ -3,21 +3,48 @@
    Edit colors, fonts, spacing here. Everything else consumes these.
    ========================================================================== */
 
+@font-face {
+  font-family: "8-BIT-WONDER";
+  src: url("8-BIT-WONDER.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "nokiafc22";
+  src: url("nokiafc22.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Perfect_DOS_VGA_437";
+  src: url("Perfect_DOS_VGA_437.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Light Mode Palette */
-  --bg-canvas: #F4F5F7;
+  --bg-canvas: #FBFAF5;
   --surface-card: #FFFFFF;
-  --ink-black: #121316;
-  --slate-dark: #2D3748;
-  --earth-brown: #C88A58;
-  --crimson: #C71D45;
-  --border-subtle: rgba(45, 55, 72, 0.16);
-  --grid-color: rgba(45, 55, 72, 0.045);
-  --crt-glow: rgba(200, 138, 88, 0.1);
+  --ink-black: #071907;
+  --slate-dark: #39495E;
+  --earth-brown: #F5CB61;
+  --crimson: #DB1F47;
+  --border-subtle: rgba(57, 73, 94, 0.16);
+  --grid-color: rgba(57, 73, 94, 0.045);
+  --crt-glow: rgba(245, 203, 97, 0.1);
 
   /* Typography */
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --header: "nokiafc22", monospace;
+  --midbold: "8-BIT-WONDER", monospace;
+  --body: "Perfect_DOS_VGA_437", monospace;
 
   /* Spacing Scale */
   --space-xs: 0.35rem;
@@ -43,15 +70,15 @@
   --transition-slower: 0.8s ease;
 }
 
-/* Dark Mode Palette */
+/* Dark Mode Palette — Brand Guide (Matte) */
 body.dark-mode {
-  --bg-canvas: #121316;
-  --surface-card: #1A1D24;
-  --ink-black: #F4F5F7;
-  --slate-dark: #94A3B8;
-  --earth-brown: #D49B6A;
-  --crimson: #E12D56;
-  --border-subtle: rgba(244, 245, 247, 0.14);
-  --grid-color: rgba(244, 245, 247, 0.035);
-  --crt-glow: rgba(199, 29, 69, 0.15);
+  --bg-canvas: #0D0D0D;
+  --surface-card: #39495E;
+  --ink-black: #FBFAF5;
+  --slate-dark: #B8A070;
+  --earth-brown: #F5CB61;
+  --crimson: #DB1F47;
+  --border-subtle: rgba(232, 228, 223, 0.08);
+  --grid-color: rgba(232, 228, 223, 0.025);
+  --crt-glow: rgba(245, 203, 97, 0.08);
 }
